@@ -14,7 +14,7 @@ function tim(busId) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
-            var text = JSON.stringify(obj.dt, null, 2);
+            var text = 'S=' + obj.dt[0].PartRemained + ' T=' + obj.dt[0].TimeRemained
             document.getElementById(busId).innerHTML = text;
         }
     };
